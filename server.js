@@ -1,12 +1,16 @@
 var express = require("express");
+// middleware
 var bodyParser = require("body-parser");
+// a conversion
+// when something fired, do the appropriate method
 var methodOverride = require("method-override");
 
 var port = 3000;
 
 var app = express();
 
-// Serve static content for the app from the "public" directory in the application directory.
+// Serve static content for the app from the "public" 
+// directory in the application directory.
 app.use(express.static(process.cwd() + "/public"));
 
 app.use(bodyParser.urlencoded({ extended: false }));
