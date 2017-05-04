@@ -19,8 +19,13 @@ router.get("/", function(req, res) {
 });
 
 router.post("/", function(req, res) {
+    console.log('post working');
+    // wh data looks like b4 db
+    // data de app 2 server
+    console.log(req.body);
     burger.create([
-        "name", "devoured"
+        // sql col name
+        "burger_name", "devoured"
     ], [
         req.body.name, req.body.devoured
     ], function() {

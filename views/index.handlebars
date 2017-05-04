@@ -4,6 +4,7 @@
 <h1>Burgers!</h1>
 
 <h2>Add a Burger</h2>
+{{!--coors 2 backend...data sent to backend--}}
 <form class="create-update-form" action="/" method="POST">
 
   <div class="form-group">
@@ -20,12 +21,12 @@
   <button type="submit">Add Burger, baby!</button>
 </form>
 
-<h2>Burgers to eat:</h2>
+<h2>Burgers eaten:</h2>
 <ul>
   {{#each burgers}}
     {{#unless this.devoured}}
       <li>
-        {{this.name}}
+        {{this.burger_name}}
 
         <form action="/{{this.id}}?_method=PUT" method="POST">
           <input type="hidden" name="devoured" value="true">
@@ -39,17 +40,17 @@
   {{/each}}
 </ul>
 
-<h2>Burgers I ate</h2>
+<h2>Burgers to eat:</h2>
 
 <ul>
   {{#each burgers}}
     {{#if this.devoured}}
       <li>
-        {{this.name}}
+        {{this.burger_name}}
 
         <form action="/{{this.id}}?_method=PUT" method="POST">
           <input type="hidden" name="devoured" value="false">
-          <button type="submit">WAKE UP!</button>
+          <button type="submit">DEVOUR!</button>
         </form>
 
         {{!--{{> burgers/delete-burger}}--}}
