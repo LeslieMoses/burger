@@ -12,33 +12,8 @@
     <input type="text" id="ca" name="name">
   </div>
 
-  <div class="form-group">
-    <label for="devoured">Eat it!</label><br>
-    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
-    <input type="radio" name="devoured" value="0"> Awake? Change this, Leslie
-  </div>
-
   <button type="submit">Add Burger, baby!</button>
 </form>
-
-<h2>Burgers eaten:</h2>
-<ul>
-  {{#each burgers}}
-    {{#unless this.devoured}}
-      <li>
-        {{this.burger_name}}
-
-        <form action="/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="devoured" value="true">
-          <button type="submit">DINNER TIME!</button>
-          <button type="submit">DELETE!</button>
-        </form>
-
-        {{!--{{> burgers/delete-burger}}--}}
-      </li>
-    {{/unless}}
-  {{/each}}
-</ul>
 
 <h2>Burgers to eat:</h2>
 
@@ -56,6 +31,24 @@
         {{!--{{> burgers/delete-burger}}--}}
       </li>
     {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Burgers eaten:</h2>
+<ul>
+  {{#each burgers}}
+    {{#unless this.devoured}}
+      <li>
+        {{this.burger_name}}
+
+        <form action="/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="devoured" value="true">
+          <button type="submit">Eat it again!</button>
+        </form>
+
+        {{!--{{> burgers/delete-burger}}--}}
+      </li>
+    {{/unless}}
   {{/each}}
 </ul>
 
