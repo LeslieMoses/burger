@@ -1,10 +1,27 @@
 {{!--Setup the main.handlebars file --}}
 {{!--so it's able to be used by Handlebars.--}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    {{!--css link--}}
+		<link rel="stylesheet" href="/assets/css/burger_style.css" type="text/css" />
+    {{!--bootstrap--}}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		{{!--google fonts--}}
+    <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
+    <title>Burgers!</title>
+	</head>
 
-<h1>Burgers!</h1>
-
-<h2>Add a Burger</h2>
-{{!--coors 2 backend...data sent to backend--}}
+ <div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="../../assets/img/burgers.jpg" alt="...">
+      <div class="caption">
+        <h2>Elegant </h2>
+        <h1>Burgers</h1>
+        <h3>Add a Burger</h3>
+        {{!--links 2 backend...data sent to backend--}}
 <form class="create-update-form" action="/" method="POST">
 
   <div class="form-group">
@@ -12,8 +29,15 @@
     <input type="text" id="ca" name="name">
   </div>
 
-  <button type="submit">Add Burger, baby!</button>
+  <button class="btn btn-warning" type="submit">Add Burger, baby!</button>
 </form>
+        <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <h2>Burgers to eat:</h2>
 
