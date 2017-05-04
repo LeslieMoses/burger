@@ -48,9 +48,25 @@
      margin: 5px;
      background: black;
      color: white;
-     border-radius: 3%
+     border-radius: 5px;
+ }
+ 
+ .create-update-form,
+ input {
+     text-align: center;
+     padding: 5px;
+     margin: 5px;
+     background: black;
+     color: white;
+     border-radius: 10px;
  }
  
  .form-group {
      margin-bottom: 5px;
+     color: white;
+ }
+ 
+ #ca {
+     border-color: white;
+     border-radius: 20px;
  }

@@ -21,8 +21,9 @@ router.get("/", function(req, res) {
 router.post("/", function(req, res) {
     console.log('post working');
     // wh data looks like b4 db
-    // req.body--data de app 2 server
+    // req.body--data from app 2 server
     console.log("this is the req.body", req.body);
+    // burger w/ all these methods; create a property
     burger.create([
         // sql col name
         "burger_name", "devoured"
