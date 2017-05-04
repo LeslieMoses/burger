@@ -3,28 +3,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+  <meta charset="UTF-8">
     {{!--css link--}}
-		<link rel="stylesheet" href="/assets/css/burger_style.css" type="text/css" />
+    <link rel="stylesheet" href="/assets/css/burger_style.css" type="text/css" />
     {{!--bootstrap--}}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		{{!--google fonts--}}
-    <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
+    {{!--google fonts--}}
+    <link href="https://fonts.googleapis.com/css?family=Alex+Brush|Raleway|Righteous" rel="stylesheet">
     <title>Burgers!</title>
-	</head>
+  </head>
 
- <div class="row">
-  <div class="col-sm-6 col-md-4">
+<div class="page-header container">
+  <h2> </h2>
+        <h1 style="font-size:70px ">Elegant<span style="font-family: 'Righteous', cursive;">Burger</span></h1><span style="font-family: 'Raleway', sans-serif;">Where the elite eat meat</span> 
+</div>
+ <div class="row containter">
+           
+  <div class="col-sm-12 col-lg-4">
     <div class="thumbnail">
       <img src="../../assets/img/burgers.jpg" alt="...">
       <div class="caption">
-        <h2>Elegant </h2>
-        <h1>Burgers</h1>
-        <h3>Add a Burger</h3>
-        {{!--links 2 backend...data sent to backend--}}
+       
+      </div> 
+       {{!--links 2 backend...data sent to backend--}}
 <form class="create-update-form" action="/" method="POST">
 
   <div class="form-group">
+    <h3>Request a Burger</h3>
     <label for="ca">Burger Name:</label>
     <input type="text" id="ca" name="name">
   </div>
@@ -36,12 +41,30 @@
     </div>
   </div>
 </div>
+       
+
+{{!--2nd thumbnail  box--}}
+
+  <div class="col-sm-12 col-lg-3">
+    <div class="thumbnail">
+      <img src="..." alt="...">
+      <div class="caption">
+        <h3>Thumbnail label</h3>
+        <p>...</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 
 
 
-<h2>Burgers to eat:</h2>
 
-<ul>
+
+<h2>Burgers eaten:</h2>
+
+<ol>
   {{#each burgers}}
     {{#if this.devoured}}
       <li>
@@ -49,17 +72,17 @@
 
         <form action="/{{this.id}}?_method=PUT" method="POST">
           <input type="hidden" name="devoured" value="false">
-          <button type="submit">DEVOUR!</button>
+          <button type="submit">Another, please</button>
         </form>
 
         {{!--{{> burgers/delete-burger}}--}}
       </li>
     {{/if}}
   {{/each}}
-</ul>
+</ol>
 
-<h2>Burgers eaten:</h2>
-<ul>
+<h2>Burgers to eat:</h2>
+<ol>
   {{#each burgers}}
     {{#unless this.devoured}}
       <li>
@@ -67,13 +90,14 @@
 
         <form action="/{{this.id}}?_method=PUT" method="POST">
           <input type="hidden" name="devoured" value="true">
-          <button type="submit">Eat it again!</button>
+          <button type="submit">Bon Appétit</button>
         </form>
 
         {{!--{{> burgers/delete-burger}}--}}
       </li>
     {{/unless}}
   {{/each}}
-</ul>
+</ol>
+
 
 

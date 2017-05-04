@@ -2,10 +2,20 @@ body {
     background: dimgray;
 }
 
-h1 {
+.page-header {
     color: white;
     font-family: 'Alex Brush', cursive;
+    background: darkslategray;
+    background: black;
+    font-size: 40px;
+    text-align: center
 }
+
+burgerhed:.page-header {
+    color: red;
+}
+
+.elegant {}
 
 h2 {
     color: white;
